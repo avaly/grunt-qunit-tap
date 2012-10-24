@@ -21,7 +21,7 @@ grunt.loadNpmTasks('grunt-qunit-tap');
 
 This plugin exposes the `qunit-tap` task in grunt, which is a multi-task. It depends on the `qunit` task included with grunt.
 
-Calling the `grunt-tap` with a target, will call the `qunit` task with the same target name.
+Calling the `qunit-tap` with a target, will call the `qunit` task with the same target name.
 
 Sample configuration:
 
@@ -49,4 +49,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## License
 
 Copyright (c) 2012 Valentin Agachi
+
 Licensed under the MIT license.
