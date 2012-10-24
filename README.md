@@ -1,6 +1,8 @@
 # grunt-qunit-tap
 
-Grunt plugin for running QUnit tests with TAP reporting
+Grunt plugin for running QUnit tests with TAP reporting.
+
+Useful for continuous integration tools (e.g. Jenkins with TAP plugin).
 
 ## Getting Started
 
