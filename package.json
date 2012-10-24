@@ -22,10 +22,7 @@
 		}
 	],
 	"engines": {
-		"node": "*"
-	},
-	"scripts": {
-		"test": "grunt test"
+		"node": ">=0.8"
 	},
 	"devDependencies": {
 		"grunt": "~0.3.14"
