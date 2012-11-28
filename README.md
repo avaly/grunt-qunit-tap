@@ -38,7 +38,7 @@ Sample configuration:
 	}
 ```
 
-Executing `grunt qunit-tap:foo` will run the `qunit` task and put the TAP results in the `logs/` folder.
+Executing `grunt qunit-tap:foo` will run the `qunit:foo` task and put the TAP results in the `logs/` folder.
 
 ## Contributing
 
@@ -46,6 +46,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+- v1.0.1 - fixed issue when running original qunit task
 - v1.0.0 - first public release, compatible with grunt v0.3.*
 
 ## License
