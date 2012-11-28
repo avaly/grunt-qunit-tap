@@ -223,14 +223,14 @@ var qunitTap = function qunitTap(qunitObject, printLikeFunction, options) {
 		tap.puts(tap.config.initialCount + '..' + tap.count);
 	};
 
-	var addListener = function (config) {
+	var addListener = (function(config){
 		// detect QUnit's multipleCallbacks feature. see jquery/qunit@34f6bc1
 		var isMultipleLoggingCallbacksSupported =
 				(typeof config !== 'undefined' &&
-				 typeof config.log !== 'undefined' &&
-				 typeof config.done !== 'undefined' &&
-				 typeof config.moduleStart !== 'undefined' &&
-				 typeof config.testStart !== 'undefined'),
+					typeof config.log !== 'undefined' &&
+					typeof config.done !== 'undefined' &&
+					typeof config.moduleStart !== 'undefined' &&
+					typeof config.testStart !== 'undefined'),
 			slice = Array.prototype.slice;
 		return function (subject, observer, event) {
 			var originalLoggingCallback = subject[event];
@@ -248,7 +248,7 @@ var qunitTap = function qunitTap(qunitObject, printLikeFunction, options) {
 				};
 			}
 		};
-	}(qu.config);
+	}(qu.config));
 	addListener(qu, tap, 'moduleStart');
 	addListener(qu, tap, 'testStart');
 	addListener(qu, tap, 'log');

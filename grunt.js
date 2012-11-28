@@ -24,7 +24,10 @@ module.exports = function(grunt) {
 				node: true,
 				es5: true
 			},
-			globals: {}
+			globals: {
+				alert: true,
+				QUnit: true
+			}
 		}
 	});
 
