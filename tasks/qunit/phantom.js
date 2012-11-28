@@ -41,16 +41,18 @@ var resultsFilename = suiteName
 		.replace(/^\-|\-$/g, "")
 		.replace(/\-+/g, "-");
 
-var buildOutpuDir = system.env['QUNIT_TAP_OUTPUT'];
+var buildOutputDir = system.env['QUNIT_TAP_OUTPUT'];
 
-if (!fs.exists(buildOutpuDir)) {
-	fs.makeDirectory(buildOutpuDir);
-}
+if (buildOutputDir) {
+	if (!fs.exists(buildOutputDir)) {
+		fs.makeDirectory(buildOutputDir);
+	}
 
-resultsFilename = buildOutpuDir + resultsFilename + ".tap";
+	resultsFilename = buildOutputDir + resultsFilename + ".tap";
 
-if (fs.exists(resultsFilename)) {
-	fs.remove(resultsFilename);
+	if (fs.exists(resultsFilename)) {
+		fs.remove(resultsFilename);
+	}
 }
 
 // Messages are sent to the parent by appending them to the tempfile.
@@ -61,7 +63,9 @@ function sendMessage(args) {
 
 	// Exit when all done.
 	if (/^done/.test(args[0])) {
-		fs.write(resultsFilename, args[5], "a");
+		if (buildOutputDir) {
+			fs.write(resultsFilename, args[5], "a");
+		}
 		phantom.exit();
 	}
 }
