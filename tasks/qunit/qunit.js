@@ -263,6 +263,16 @@ var reportContent = '';
 
 // Setup TAP reporter
 qunitTap(QUnit, function(str){
+	// fix tap plan bug: bogus plan
+	if (str === '1..0') {
+		return;
+	}
+
+	// fix tap plan bug: multiple plans
+	if (str.match(/1\.\.\d+/)) {
+		reportContent = reportContent.replace(/1\.\.\d+\n/g, '');
+	}
+
 	reportContent += str + '\n';
 }, {
 	noPlan: true
