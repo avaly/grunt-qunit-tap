@@ -4,6 +4,8 @@ Grunt plugin for running QUnit tests with TAP reporting.
 
 Useful for continuous integration tools (e.g. Jenkins with TAP plugin).
 
+**Note:** This plugin is known to be compatible with Grunt 0.3.x, but not 0.4.x.
+
 ## Getting Started
 
 Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with:
@@ -46,11 +48,12 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+- v1.0.2 - fixed random TAP plan issues
 - v1.0.1 - fixed issue when running original qunit task
 - v1.0.0 - first public release, compatible with grunt v0.3.*
 
 ## License
 
-Copyright (c) 2012 Valentin Agachi
+Copyright (c) 2012-2013 Valentin Agachi
 
 Licensed under the MIT license.
