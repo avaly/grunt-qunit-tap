@@ -270,7 +270,7 @@ qunitTap(QUnit, function(str){
 
 	// fix tap plan bug: multiple plans
 	if (str.match(/1\.\.\d+/)) {
-		reportContent = reportContent.replace(/1\.\.\d+\n/g, '');
+		reportContent = reportContent.replace(/^[\s\S]*1\.\.\d+\n/gm, '');
 	}
 
 	reportContent += str + '\n';

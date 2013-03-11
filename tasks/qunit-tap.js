@@ -2,7 +2,7 @@
  * grunt-qunit-tap
  * https://github.com/avaly/grunt-qunit-tap
  *
- * Copyright (c) 2012 Valentin Agachi
+ * Copyright (c) 2012-2013 Valentin Agachi
  * Licensed under the MIT license.
  */
 

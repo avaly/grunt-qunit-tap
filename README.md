@@ -48,6 +48,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+- v1.0.3 - fixed duplicate TAP plan bug
 - v1.0.2 - fixed random TAP plan issues
 - v1.0.1 - fixed issue when running original qunit task
 - v1.0.0 - first public release, compatible with grunt v0.3.*
