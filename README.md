@@ -1,46 +1,73 @@
 # grunt-qunit-tap
 
-Grunt plugin for running QUnit tests with TAP reporting.
+> Grunt plugin for running QUnit tests with TAP reporting.
 
 Useful for continuous integration tools (e.g. Jenkins with TAP plugin).
 
-**Note:** This plugin is known to be compatible with Grunt 0.3.x, but not 0.4.x.
-
 ## Getting Started
 
-Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with:
+Version `2.*.*` of this plugin requires Grunt `>= 0.4.*`
 
-`npm install grunt-qunit-tap`
+Version `1.*.*` of this plugin requires Grunt `0.3.*`
 
-Then add this line to your project's `grunt.js` gruntfile:
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
-```javascript
+```shell
+npm install grunt-qunit-tap --save-dev
+```
+
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+
+```js
 grunt.loadNpmTasks('grunt-qunit-tap');
 ```
 
-[grunt]: https://github.com/cowboy/grunt
-[getting_started]: https://github.com/cowboy/grunt/blob/master/docs/getting_started.md
+## The `qunit-tap` task
 
-## Documentation
+### Overview
 
-This plugin exposes the `qunit-tap` task in grunt, which is a multi-task. It depends on the `qunit` task included with grunt.
+In your project's Gruntfile, add a section named `qunit-tap` to the data object passed into `grunt.initConfig()`.
+
+```js
+grunt.initConfig({
+	'qunit-tap': {
+		your_target: {
+			// Target-specific file lists and/or options go here.
+		},
+	},
+});
+```
+
+### Options
+
+#### options.output
+Type: `String`
+Default value: `.`
+
+The folder where the TAP result files will be written.
+
+### Usage Examples
+
+#### Default Options
 
 Calling the `qunit-tap` with a target, will call the `qunit` task with the same target name.
 
 Sample configuration:
 
 ```javascript
-	"qunit": {
-		"foo": ["tests/**/*.html"]
+grunt.initConfig({
+	qunit: {
+		foo: ["tests/**/*.html"]
 	},
-	"qunit-tap": {
-		"foo": {
-			"output": "logs/"
+	'qunit-tap': {
+		foo: {
+			output: 'logs/'
 		}
 	}
+});
 ```
 
-Executing `grunt qunit-tap:foo` will run the `qunit:foo` task and put the TAP results in the `logs/` folder.
+Executing `grunt qunit-tap:foo` will run the `qunit:foo` task and write the TAP results in the `logs/` folder.
 
 ## Contributing
 
@@ -48,6 +75,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+- v2.0.0 - Updated for Grunt v0.4.*
 - v1.0.3 - fixed duplicate TAP plan bug
 - v1.0.2 - fixed random TAP plan issues
 - v1.0.1 - fixed issue when running original qunit task
@@ -55,6 +83,6 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## License
 
-Copyright (c) 2012-2013 Valentin Agachi
+Copyright (c) 2012-2014 Valentin Agachi
 
 Licensed under the MIT license.

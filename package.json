@@ -1,7 +1,7 @@
 {
 	"name": "grunt-qunit-tap",
 	"description": "Grunt plugin for running QUnit tests with TAP reporting",
-	"version": "1.0.3",
+	"version": "2.0.0",
 	"homepage": "https://github.com/avaly/grunt-qunit-tap",
 	"author": {
 		"name": "Valentin Agachi",
@@ -23,6 +23,9 @@
 	],
 	"engines": {
 		"node": ">=0.8"
+	},
+	"dependencies": {
+		"grunt-contrib-qunit": "~0.4.0"
 	},
 	"devDependencies": {
 		"grunt": "~0.3.14"
