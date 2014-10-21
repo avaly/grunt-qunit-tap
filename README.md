@@ -1,5 +1,8 @@
 # grunt-qunit-tap
 
+[![Dependencies](https://david-dm.org/avaly/grunt-qunit-tap.png)](https://david-dm.org/avaly/grunt-qunit-tap)
+[![Flattr](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=avaly&url=https://github.com/avaly/grunt-qunit-tap&title=grunt-qunit-tap&language=&tags=github&category=software)
+
 > Grunt plugin for running QUnit tests with TAP reporting.
 
 Useful for continuous integration tools (e.g. Jenkins with TAP plugin).
