@@ -11,7 +11,8 @@ module.exports = function(grunt) {
 	grunt.registerTask('qunit-tap', 'Run QUnit tasks with TAP reporting', function(){
 		var target = null,
 			data = {
-				output: ''
+				output: '',
+				outputConsole: false
 			};
 
 		if (this.args.length) {
@@ -51,8 +52,13 @@ module.exports = function(grunt) {
 			tap.push('# pass ' + passed);
 			tap.push('# fail ' + failed);
 
-			var tapFile = data.output + currentTest.replace(/\//g, '-') +'.tap';
-			grunt.file.write(tapFile, tap.join('\n'));
+			if (data.output !== undefined) {
+				var tapFile = data.output + currentTest.replace(/\//g, '-') +'.tap';
+				grunt.file.write(tapFile, tap.join('\n'));
+			}
+			if (data.outputConsole === true) {
+				grunt.log.writeln(tap.join('\n'));
+			}
 		});
 	}
 
